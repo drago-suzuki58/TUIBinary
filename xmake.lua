@@ -1,8 +1,20 @@
 add_rules("mode.debug", "mode.release")
 
+if is_plat("windows") then
+    add_requires("pdcurses")
+else
+    add_requires("ncurses")
+end
+
 target("TUIBinary")
     set_kind("binary")
     add_files("src/*.c")
+
+    if is_plat("windows") then
+        add_packages("pdcurses")
+    else
+        add_packages("ncurses")
+    end
 
 --
 -- If you want to known more usage about xmake, please see https://xmake.io
