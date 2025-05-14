@@ -96,7 +96,7 @@ int main(int argc, char *argv[]) {
     start_color();
     init_pair(1, COLOR_BLACK, COLOR_WHITE); // Header/Footer
     init_pair(2, COLOR_WHITE, COLOR_BLACK); // Common
-    init_pair(3, COLOR_BLUE, COLOR_BLACK);  // Control characters
+    init_pair(3, COLOR_CYAN, COLOR_BLACK);  // Control characters
 
     int bytes_read = 0;
     for (size_t i = 0; i < n; i++) {
@@ -117,9 +117,9 @@ int main(int argc, char *argv[]) {
                     wprintw(pad, "%c", c);
                     wattroff(pad, COLOR_PAIR(2));
                 } else {
-                    wattron(pad, COLOR_PAIR(4));
+                    wattron(pad, COLOR_PAIR(3));
                     wprintw(pad, ".");
-                    wattroff(pad, COLOR_PAIR(4));
+                    wattroff(pad, COLOR_PAIR(3));
                 }
             }
             wprintw(pad, "\n");
@@ -141,9 +141,9 @@ int main(int argc, char *argv[]) {
                 wprintw(pad, "%c", c);
                 wattroff(pad, COLOR_PAIR(2));
             } else {
-                wattron(pad, COLOR_PAIR(4));
+                wattron(pad, COLOR_PAIR(3));
                 wprintw(pad, ".");
-                wattroff(pad, COLOR_PAIR(4));
+                wattroff(pad, COLOR_PAIR(3));
             }
         }
     }
